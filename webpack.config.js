@@ -23,5 +23,6 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'public'),
+    historyApiFallback: true // tells the browser we are using client side routing and that it should render and HTML when a 404 page is visited
   }
 };
