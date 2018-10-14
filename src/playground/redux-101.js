@@ -52,7 +52,6 @@ const store = createStore(countReducers);
 
 // Using subsrcibe and unsubscribe
 const unsubscribe = store.subscribe(() => {
-  console.log(store.getState());
 });
 
 // unsubscribe(); // Used if you want to unsubscribe
