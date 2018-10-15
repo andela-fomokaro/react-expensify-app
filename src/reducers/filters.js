@@ -10,7 +10,10 @@ const filterReducerDefaultState = {
 export default (state = filterReducerDefaultState, action) => {
   switch (action.type) {
     case 'SET_TEXT_FILTER':
-      return  { ...state, ...action};
+      return  {
+        ...state,
+        ...action
+      };
     case 'SORT_BY_AMOUNT':
       return {
         ...state,
