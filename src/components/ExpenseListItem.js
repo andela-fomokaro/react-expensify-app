@@ -3,6 +3,7 @@ import moment from 'moment';
 import numeral from 'numeral';
 import { Link } from 'react-router-dom';
 
+console.log('I AM HERE <<<<<<>>>>>');
 const ExpenseListItem = ({ description, amount, createdAt, id }) => {
   return (
   <div>
