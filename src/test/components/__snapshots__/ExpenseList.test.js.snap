@@ -2,9 +2,6 @@
 
 exports[`should render ExpenseList with empty message 1`] = `
 <div>
-  <h1>
-    Expense List
-  </h1>
   <Connect(ExpenseListFilters) />
   <p>
     No expenses Found
@@ -14,9 +11,6 @@ exports[`should render ExpenseList with empty message 1`] = `
 
 exports[`should render ExpenseList with expenses 1`] = `
 <div>
-  <h1>
-    Expense List
-  </h1>
   <Connect(ExpenseListFilters) />
   <ExpenseListItem
     amount={195}

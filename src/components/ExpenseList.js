@@ -7,7 +7,6 @@ import selectExpenses from '../selectors/expenses';
 export const ExpenseList = (props) =>  {
   return (
     <div>
-      <h1>Expense List</h1>
       <ExpenseListFilters />
       {
         props.expenses.length ? props.expenses.map((expense) => {
