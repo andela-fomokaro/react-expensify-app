@@ -7,6 +7,7 @@ import HelpPage from '../components/HelpPage';
 import EditExpensePage from '../components/EditExpensePage';
 import AddExpensePage from '../components/AddExpensePage';
 import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
+import NotFoundPage from "../components/NotFoundPage";
 
 
 const AppRouter = () => (
@@ -18,6 +19,7 @@ const AppRouter = () => (
         <Route path='/create' component={AddExpensePage} />
         <Route path='/edit/:id' component={EditExpensePage} />
         <Route path='/help' component={HelpPage} />
+        <Route component={NotFoundPage} /> 
       </Switch>
     </div>
   </BrowserRouter>
