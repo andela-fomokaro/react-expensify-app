@@ -18,9 +18,14 @@ database.ref().set({
   name: 'Omokaro Faith',
   age: 100,
   isMarried: false,
+  stressLevel: 6,
+  job: {
+    title: 'Software developer',
+    company: 'Google'
+  },
   location: {
-    city: 'Ikeja',
-    country: 'Nigeria',
+    city: 'Philadelphia',
+    country: 'United State',
   }
 }).then(() => {
   console.log('Data is saved');
@@ -28,6 +33,7 @@ database.ref().set({
   console.log('Data rejected', error);
 });
 
+// adding attributes
 database.ref('attributes').set({
   height: 73,
   weight: 150
@@ -37,8 +43,16 @@ database.ref('attributes').set({
   console.log('this was rejected', error);
 });
 
+// removing attributes
 database.ref('isMarried').remove().then(() => {
   console.log('this was successful');
 }).catch(e => {
   console.log(e);
+});
+
+// updating attributes
+database.ref().update({
+  stressLevel: 9,
+  'job/company': 'Amazon',
+  'location/city': 'Seattle'
 });
