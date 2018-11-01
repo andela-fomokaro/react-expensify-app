@@ -22,4 +22,17 @@ database.ref().set({
     city: 'Ikeja',
     country: 'Nigeria',
   }
+}).then(() => {
+  console.log('Data is saved');
+}).catch(error => {
+  console.log('Data rejected', error);
+});
+
+database.ref('attributes').set({
+  height: 73,
+  weight: 150
+}).then(() => {
+  console.log('Yaaay this was successful');
+}).catch(error => {
+  console.log('this was rejected', error);
 });
