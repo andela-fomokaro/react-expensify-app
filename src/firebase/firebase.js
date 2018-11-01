@@ -36,3 +36,9 @@ database.ref('attributes').set({
 }).catch(error => {
   console.log('this was rejected', error);
 });
+
+database.ref('isMarried').remove().then(() => {
+  console.log('this was successful');
+}).catch(e => {
+  console.log(e);
+});
