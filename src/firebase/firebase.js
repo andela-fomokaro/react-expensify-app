@@ -14,6 +14,8 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
+export { firebase, database as default };
+
 // used when we want to get data once
 // database.ref().once('value')
 // .then(snapshot => {
@@ -30,12 +32,47 @@ const database = firebase.database();
 //   console.log('Error with data fetching', e);
 // });
 
-database.ref().on('value', snapshot => {
-  const value = snapshot.val();
-  console.log(`${value.name} is a ${value.job.title} at ${value.job.company}`);
-}, e => {
-  console.log(e, ':) found');
-})
+// Assignment
+// database.ref().on('value', snapshot => {
+//   const value = snapshot.val();
+//   console.log(`${value.name} is a ${value.job.title} at ${value.job.company}`);
+// }, e => {
+//   console.log(e, ':) found');
+// });
+
+// Storing array structures.
+// database.ref('expenses').push({
+//   description: 'Sewage Bills',
+//   note: 'Sewage empity',
+//   amount: '$100',
+//   createdAt: 'mon, 12, 2018'
+// });
+
+// database.ref('expenses')
+//    .once('value')
+//    .then(snapshot => {
+//      const expenses = [];
+
+//      snapshot.forEach(childSnapshot => {
+//        expenses.push({
+//          id: childSnapshot.key,
+//          ...childSnapshot.val()
+//        });
+//      });
+//      console.log(expenses);
+//    });
+
+// database.ref().on('value', snapshot => {
+//   const expenses = [];
+//   snapshot.forEach(childSnapshot => {
+//     expenses.push({
+//       id: childSnapshot.key,
+//       ...childSnapshot.val()
+//     });
+//   });
+//   console.log(expenses);
+//   });
+
 
 
 // database.ref().set({
