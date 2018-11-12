@@ -40,3 +40,28 @@ export const editExpense = (id, updates ) => ({
   id,
   updates
 });
+
+// Set Expenses Generator
+export const setExpenses = (expense) => ({
+  type: 'SET_EXPENSES',
+  expense
+});
+
+
+//Set Start Expense Generator
+export const setStartExpenses = (expenseData = {}) => {
+  return (dispatch) => {
+    return database.ref('expenses').once('value').then(snapshot => {
+      const expenses = [];
+      snapshot.forEach((childSnapShot) => {
+        expenses.push({
+          id: childSnapShot.key,
+          ...childSnapShot.val()
+        });
+      });
+      dispatch(setExpenses(expenses));
+    }).catch(e => {
+      console.log('Error fetching data', e);
+    });
+  }
+}
