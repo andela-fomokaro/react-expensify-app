@@ -50,6 +50,15 @@ export const editExpense = (id, updates ) => ({
   updates
 });
 
+//Set Start Edit Expense
+export const startEditExpense = (id, updates) => {
+  return (dispatch) => {
+    return database.ref(`expenses/${id}`).update(updates).then(() => {
+      dispatch(editExpense(id, updates));
+    });
+  }
+}
+
 // Set Expenses Generator
 export const setExpenses = (expense) => ({
   type: 'SET_EXPENSES',
